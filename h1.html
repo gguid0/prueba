@@ -5,11 +5,12 @@
     </head>
     <body>
         <h1>tabla</h1>
-        <table>
+        <table style="border: 1px solid">
             <thead>
                 <tr>
                     <th style="text-align: left">ID</th>
                     <th style="text-align: left">NAME</th>
+                    <th></th>
                 </tr> 
             </thead>
             <tbody>
@@ -26,12 +27,32 @@
                 <tr>
                     <td><input></td>
                     <td><input></td>
-                    <td><button>add</button></td>
+                    <td><button onclick= "add()">Add</button></td>
                 </tr>  
             </tfoot>
         </table>
        <script>
-           window.onload = () => {document.getElementsByTagName('input')[0].focus()}
+        alert("hola!")
+           clear()
+
+           function add()
+           {
+            debugger
+             var table = document.getElementsByTagName('tbody')[0]
+             var row = table.insertRow()
+             var cell = row.insertCell()
+             cell.innerHTML = document.getElementsByTagName('input')[0].value
+             var cell = row.insertCell()
+             cell.innerHTML = document.getElementsByTagName('input')[1].value
+             
+             clear()
+           }
+           function clear()
+           { 
+             document.getElementsByTagName('input')[0].value = ''
+             document.getElementsByTagName('input')[1].value = ''
+             document.getElementsByTagName('input')[0].focus()
+           }
        </script>
     </body>
 </html>
